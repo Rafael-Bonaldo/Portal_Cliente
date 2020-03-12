@@ -3,6 +3,9 @@
         <div class="col-sm-9 col-md-7 col-lg-5">
             <div class="login-card">
                 <div class="login-card__body">
+                        <div class="error_message" *ngIf="error">
+                            {{ error }}
+                        </div>
                     <h5 class="login-card__title text-center mt-0">Register New User</h5>
                     <form class="login-card__form-signin" [formGroup]="formUser" (ngSubmit)="registerNewUser()">
                         <div class="form-group login-card__form-label-group">

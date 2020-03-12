@@ -63,7 +63,9 @@ export class RegisterComponent implements OnInit {
         this.router.navigate(['/'], { queryParams: { registered: true } });
       },
       error => {
-        this.error = error;
+        setTimeout(() => {
+          this.error = error.error['message'];
+        }, 500);
         this.loading = false;
       }
     )
