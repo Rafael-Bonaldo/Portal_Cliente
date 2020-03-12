@@ -1,0 +1,26 @@
+
+$input-padding-x: 1.5rem;
+$input-padding-y: .75rem;
+
+.btn {
+  height: auto;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  @include rem-calc(border-radius, 32px);
+}
+
+.btn-lg {
+  padding: $input-padding-y $input-padding-x;
+}
+
+.btn-primary {
+  background-color: #26798C;
+  color: white;
+}
+
+.btn-secondary {
+  border: 1px solid #26798C;
+  background-color: #FFFFFF;
+  color: #26798C;
+}

@@ -1,0 +1,63 @@
+<div class="limiter">
+    <div class="container">
+        <div class="row text-right">
+            <div class="col-12">
+                <a [routerLink]="['/']">Log off</a>
+            </div>
+        </div>
+    </div>
+    <div class="container-table">
+        <div class="wrap-table">
+                <div class="table">
+                    <div class="table-row header">
+                        <div class="table-cell">
+                            Full Name
+                        </div>
+                        <div class="table-cell">
+                            Login
+                        </div>
+                        <div class="table-cell">
+                            E-mail
+                        </div>
+                        <div class="table-cell">
+                            CPF
+                        </div>
+                        <div class="table-cell">
+                            Phone
+                        </div>
+                        <div class="table-cell">
+                            Photo
+                        </div>
+                        <div class="table-cell">
+                            Blocked
+                        </div>
+                    </div>
+
+                    <div class="table-row" *ngFor="let user of users">
+                        <div class="table-cell" data-title="Full Name">
+                            {{ user.fullName }}
+                        </div>
+                        <div class="table-cell" data-title="Login">
+                            {{ user.login }}
+                        </div>
+                        <div class="table-cell" data-title="E-mail">
+                            {{ user.email }}
+                        </div>
+                        <div class="table-cell" data-title="CPF">
+                            {{ user.cpf }}
+                        </div>
+                        <div class="table-cell" data-title="Phone">
+                            {{ user.phone }}
+                        </div>
+                        <div class="table-cell" data-title="Photo">
+                            <img [src]="user.photo">
+                        </div>
+                        <div class="table-cell" data-title="Blocked">
+                            {{ user.blocked }}
+                        </div>
+                    </div>
+
+                </div>
+        </div>
+    </div>
+</div>

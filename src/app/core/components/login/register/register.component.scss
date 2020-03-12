@@ -1,0 +1,7 @@
+@import './../login.component.scss';
+
+.login-card .login-card__title {
+    @include rem-calc(margin-bottom, 32px);
+    @include rem-calc(font-size, 24px);
+    font-weight: $font-regular;
+  }

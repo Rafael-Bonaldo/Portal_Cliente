@@ -1,0 +1,72 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5">
+            <div class="login-card">
+                <div class="login-card__body">
+                    <h5 class="login-card__title text-center mt-0">Register New User</h5>
+                    <form class="login-card__form-signin" [formGroup]="formUser" (ngSubmit)="registerNewUser()">
+                        <div class="form-group login-card__form-label-group">
+                            <input type="text" name="inputFullName" id="inputFullName" formControlName="fullName"
+                                [ngClass]="{ 'is-invalid': submitted && f.fullName.errors }" class="form-control"
+                                placeholder="Full Name" required autofocus>
+                            <div *ngIf="submitted && f.fullName.errors" class="invalid-feedback">
+                                <div *ngIf="f.fullName.errors.required">Full Name is required</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group login-card__form-label-group">
+                            <input type="text" name="inputCpf" id="inputCpf" formControlName="cpf"
+                                [ngClass]="{ 'is-invalid': submitted && f.cpf.errors }" class="form-control"
+                                placeholder="CPF" required>
+                            <div *ngIf="submitted && f.cpf.errors" class="invalid-feedback">
+                                <div *ngIf="f.cpf.errors.required">CPF is required</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group login-card__form-label-group">
+                            <input type="text" name="inputPhone" id="inputPhone" formControlName="phone"
+                                [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" class="form-control"
+                                placeholder="Phone" required>
+                            <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                                <div *ngIf="f.phone.errors.required">Phone is required</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group login-card__form-label-group">
+                            <input type="text" name="inputLogin" id="inputLogin" formControlName="login"
+                                [ngClass]="{ 'is-invalid': submitted && f.login.errors }" class="form-control"
+                                placeholder="Login" required>
+                            <div *ngIf="submitted && f.login.errors" class="invalid-feedback">
+                                <div *ngIf="f.login.errors.required">Login is required</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group login-card__form-label-group">
+                            <input type="email" name="inputEmail" id="inputEmail" formControlName="email"
+                                [ngClass]="{ 'is-invalid': submitted && f.email.errors }" class="form-control"
+                                placeholder="E-mail" required>
+                            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                <div *ngIf="f.email.errors.required">E-mail is required</div>
+                                <div *ngIf="f.email.errors.email">E-mail is invalid</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group login-card__form-label-group">
+                            <input type="password" name="inputPassword" id="inputPassword" formControlName="password"
+                                [ngClass]="{ 'is-invalid': submitted && f.password.errors }" class="form-control"
+                                placeholder="Password" required>
+                            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                <div *ngIf="f.password.errors.required">Password is required</div>
+                                <div *ngIf="f.password.hasError('minlength')">Password must be at least 6 characters
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-lg btn-primary text-uppercase my-3" type="submit">Register</button>
+                        <button class="btn btn-lg btn-secondary text-uppercase" type="button"
+                            routerLink="/">Cancel</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
